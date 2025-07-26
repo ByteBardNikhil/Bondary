@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "//Bondary/static/css/main.58696570.css",
-    "main.js": "//Bondary/static/js/main.caecec17.js",
-    "static/media/home.svg": "//Bondary/static/media/home.c16727bb698290a68bd7d7543a211ed1.svg",
-    "static/media/profile.svg": "//Bondary/static/media/profile.88602e311ac3a49076cfaede57fc1c56.svg",
-    "static/media/chat.svg": "//Bondary/static/media/chat.916f2ed928576fd85b93782ca3b4ce07.svg",
-    "index.html": "//Bondary/index.html",
-    "main.58696570.css.map": "//Bondary/static/css/main.58696570.css.map",
-    "main.caecec17.js.map": "//Bondary/static/js/main.caecec17.js.map"
+    "main.css": "/Bondary/static/css/main.58696570.css",
+    "main.js": "/Bondary/static/js/main.6947113d.js",
+    "static/media/home.svg": "/Bondary/static/media/home.c16727bb698290a68bd7d7543a211ed1.svg",
+    "static/media/profile.svg": "/Bondary/static/media/profile.88602e311ac3a49076cfaede57fc1c56.svg",
+    "static/media/chat.svg": "/Bondary/static/media/chat.916f2ed928576fd85b93782ca3b4ce07.svg",
+    "index.html": "/Bondary/index.html",
+    "main.58696570.css.map": "/Bondary/static/css/main.58696570.css.map",
+    "main.6947113d.js.map": "/Bondary/static/js/main.6947113d.js.map"
   },
   "entrypoints": [
     "static/css/main.58696570.css",
-    "static/js/main.caecec17.js"
+    "static/js/main.6947113d.js"
   ]
 }
