@@ -1,7 +1,4 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import homelogo from "../assets/images/home.svg";
-import chatlogo from "../assets/images/chat.svg";
-import profilelogo from "../assets/images/profile.svg";
 
 function BottomNav() {
   const navigate = useNavigate();
@@ -15,19 +12,28 @@ function BottomNav() {
         className={isActive("/") ? "active" : ""}
         onClick={() => navigate("/")}
       >
-        <img className="logo" src={homelogo} alt="Home" />
+        <i className="material-icons">home</i>
       </button>
+
       <button
-        className={isActive("/chat") ? "active" : ""}
-        onClick={() => navigate("/chat")}
+        className={isActive("/anonymous") ? "active" : ""}
+        onClick={() => navigate("/anonymous")}
       >
-        <img className="logo" src={chatlogo} alt="Chat" />
+        <span className="material-symbols-outlined">domino_mask</span>
       </button>
+
+      <button
+        className={isActive("/messages") ? "active" : ""}
+        onClick={() => navigate("/messages")}
+      >
+        <i className="material-icons">message</i>
+      </button>
+
       <button
         className={isActive("/profile") ? "active" : ""}
         onClick={() => navigate("/profile")}
       >
-        <img className="logo" src={profilelogo} alt="Profile" />
+        <i className="material-icons">person</i>
       </button>
     </nav>
   );

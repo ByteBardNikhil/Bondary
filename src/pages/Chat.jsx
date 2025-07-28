@@ -1,76 +1,58 @@
-import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-function Chat() {
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState("");
-  const [user, setUser] = useState(null);
+const dummyChats = {
+  1: {
+    name: "Aditi",
+    messages: [
+      { text: "Hey!", from: "them", time: "10:00" },
+      { text: "Hi Aditi!", from: "me", time: "10:01" },
+    ],
+  },
+  2: {
+    name: "Rohan",
+    messages: [
+      { text: "See you at 6", from: "them", time: "9:00" },
+      { text: "Sure!", from: "me", time: "9:02" },
+    ],
+  },
+  3: {
+    name: "Zara",
+    messages: [
+      { text: "Long time!", from: "them", time: "8:00" },
+      { text: "Yeah! Let’s catch up.", from: "me", time: "8:05" },
+    ],
+  },
+};
 
-  useEffect(() => {
-    const saved = localStorage.getItem("bondary_user");
-    if (saved) setUser(JSON.parse(saved));
-  }, []);
+export default function Chat() {
+  const { id } = useParams();
+  const chat = dummyChats[id];
 
-  const sendMessage = () => {
-    if (input.trim()) {
-      setMessages([...messages, { text: input, type: "sent", status: "sent" }]);
-      setInput("");
-    }
-  };
-
-  const generatePrompt = () => {
-    const prompts = [
-      "What's something you'd never do again?",
-      "If today was your last day, what would you say?",
-    ];
-    const random = prompts[Math.floor(Math.random() * prompts.length)];
-    setMessages([...messages, { text: random, type: "sent", status: "sent" }]);
-  };
-
-  // simulate seen
-  useEffect(() => {
-    const lastIndex = messages.length - 1;
-    if (messages[lastIndex]?.type === "sent") {
-      setTimeout(() => {
-        setMessages((prev) =>
-          prev.map((msg, i) =>
-            i === lastIndex ? { ...msg, status: "seen" } : msg
-          )
-        );
-      }, 2000);
-    }
-  }, [messages]);
+  if (!chat) return <p>Chat not found</p>;
 
   return (
-    <div className="chat-page">
-      {user && <p>Hello, {user.name} 👋</p>}
-
-      <div className="messages">
-        {messages.map((msg, idx) => (
-          <div key={idx} className={`message ${msg.type}`}>
+    <div style={{ padding: "1rem" }}>
+      <h2>Chat with {chat.name}</h2>
+      <div>
+        {chat.messages.map((msg, index) => (
+          <div
+            key={index}
+            style={{
+              alignSelf: msg.from === "me" ? "flex-end" : "flex-start",
+              background: msg.from === "me" ? "#d1f5d3" : "#f1f0f0",
+              padding: "8px",
+              margin: "6px 0",
+              maxWidth: "60%",
+              borderRadius: "8px",
+            }}
+          >
             {msg.text}
-            {msg.type === "sent" && (
-              <span className={`tick ${msg.status}`}></span>
-            )}
+            <div style={{ fontSize: "10px", textAlign: "right" }}>
+              {msg.time}
+            </div>
           </div>
         ))}
-      </div>
-
-      <button className="icebreaker-btn" onClick={generatePrompt}>
-        ❄️ Icebreaker
-      </button>
-
-      <div className="chat-input">
-        <input
-          type="text"
-          value={input}
-          placeholder="Type a message..."
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-        />
-        <button onClick={sendMessage}>Send</button>
       </div>
     </div>
   );
 }
-
-export default Chat;

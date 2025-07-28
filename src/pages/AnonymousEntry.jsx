@@ -7,7 +7,7 @@ function AnonymousEntry() {
     <div className="anon-entry">
       <h2>Start Chatting Anonymously</h2>
       <p>No sign-up required. Just tap and go!</p>
-      <button onClick={() => navigate("/chat")}>Start Chat</button>
+      <button onClick={() => navigate("/anonymous")}>Start Chat</button>
     </div>
   );
 }
