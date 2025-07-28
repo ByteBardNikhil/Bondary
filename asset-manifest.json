@@ -1,16 +1,14 @@
 {
   "files": {
-    "main.css": "/Bondary/static/css/main.58696570.css",
-    "main.js": "/Bondary/static/js/main.6947113d.js",
-    "static/media/home.svg": "/Bondary/static/media/home.c16727bb698290a68bd7d7543a211ed1.svg",
-    "static/media/profile.svg": "/Bondary/static/media/profile.88602e311ac3a49076cfaede57fc1c56.svg",
-    "static/media/chat.svg": "/Bondary/static/media/chat.916f2ed928576fd85b93782ca3b4ce07.svg",
+    "main.css": "/Bondary/static/css/main.67aca112.css",
+    "main.js": "/Bondary/static/js/main.dcf78934.js",
+    "static/media/Profile_photo.png": "/Bondary/static/media/Profile_photo.5ff59294575f077e7f2d.png",
     "index.html": "/Bondary/index.html",
-    "main.58696570.css.map": "/Bondary/static/css/main.58696570.css.map",
-    "main.6947113d.js.map": "/Bondary/static/js/main.6947113d.js.map"
+    "main.67aca112.css.map": "/Bondary/static/css/main.67aca112.css.map",
+    "main.dcf78934.js.map": "/Bondary/static/js/main.dcf78934.js.map"
   },
   "entrypoints": [
-    "static/css/main.58696570.css",
-    "static/js/main.6947113d.js"
+    "static/css/main.67aca112.css",
+    "static/js/main.dcf78934.js"
   ]
 }
